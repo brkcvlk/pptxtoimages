@@ -46,7 +46,7 @@ Then install the package via pip:
     converter = PPTXToImageConverter(pptx_path)
 
     # Convert your .pptx file to images
-    images = converter.pptx_to_images("path/to/presentation.pptx", output_dir="output_images")
+    images = converter.convert("path/to/presentation.pptx", output_dir="output_images")
 
     print(f"Converted {len(images)} slides to images.")
 ```

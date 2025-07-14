@@ -2,6 +2,10 @@ import argparse
 from pptxtoimages.tools import PPTXToImageConverter
 
 def main():
+    """
+    Main function to run the pptx to images conversion example.
+    Converts 'sample.pptx' into PNG images saved in 'output_images' folder.
+    """
     parser = argparse.ArgumentParser(description="Convert PPTX to images")
     parser.add_argument("pptx", help="Path to the .pptx file")
     parser.add_argument("--output", default="slides_images", help="Output directory")

@@ -86,7 +86,7 @@ Note : For more examples and details, please check the ```example.py``` file.
 ---
 
 ## License
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Contact
 

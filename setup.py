@@ -4,10 +4,12 @@ setup(
     name="pptxtoimages",
     version="0.1.0",
     packages=find_packages(),
-    install_requires=[],
+    install_requires=[
+        "pdf2image"
+    ],
     entry_points={
         "console_scripts": [
-            "pptxtoimages = cli:main"
+            "pptxtoimages-cli = pptxtoimages.cli:main"
         ]
     },
     author="Burak Civelek",
@@ -17,5 +19,5 @@ setup(
         "Programming Language :: Python :: 3",
         "Operating System :: OS Independent",
     ],
-    python_requires='>=3.6',
+    python_requires='>=3.7',
 )

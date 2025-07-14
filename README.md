@@ -40,10 +40,10 @@ Then install the package via pip:
 ### Python
 
 ```
-    from pptxtoimages.tools.convert import Converter
+    from pptxtoimages.tools import PPTXToImageConverter
 
     # Initialize converter
-    converter = Converter()
+    converter = PPTXToImageConverter(pptx_path)
 
     # Convert your .pptx file to images
     images = converter.pptx_to_images("path/to/presentation.pptx", output_dir="output_images")

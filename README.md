@@ -1,7 +1,7 @@
 # pptxtoimages
 
 [![PyPI version](https://img.shields.io/pypi/v/pptxtoimages.svg)](https://pypi.org/project/pptxtoimages/)
-[![License](https://img.shields.io/github/license/yourusername/pptxtoimages.svg)](LICENSE)
+[![License](https://img.shields.io/github/license/brkcvlk/pptxtoimages.svg)](LICENSE)
 
 ## Overview
 

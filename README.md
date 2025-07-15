@@ -1,6 +1,7 @@
 # pptxtoimages
 
 [![PyPI version](https://img.shields.io/pypi/v/pptxtoimages.svg)](https://pypi.org/project/pptxtoimages/)
+[![Downloads](https://static.pepy.tech/badge/pptxtoimages)](https://pepy.tech/project/pptxtoimages)
 [![License](https://img.shields.io/github/license/brkcvlk/pptxtoimages.svg)](LICENSE)
 
 ## Overview
@@ -84,6 +85,12 @@ Note : For more examples and details, please check the ```example.py``` file.
 6. Open a pull request
 
 ---
+## Links
+
+- **[Download on PyPI](https://pypi.org/project/pptxtoimages/)**
+- **[View Download Stats](https://pepy.tech/project/pptxtoimages)**
+- **[View Source on GitHub](https://github.com/brkcvlk/pptxtoimages)**
+- **[Report Issues](https://github.com/brkcvlk/pptxtoimages/issues)**
 
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.

@@ -80,8 +80,12 @@ Note : For more examples and details, please check the ```example.py``` file.
 ```
     pip install -r requirements.txt
 ```
-4. Use bump2version to manage versioning
-5. Run tests and linting (if any)
+4. Install pre-commit hooks (optional but recommended)
+    - This ensures your code is auto-formatted (e.g., by black) before each commit.
+###  Versioning
+- You may use `bump2version` to suggest version changes only if authorized by the project maintainer.
+Please respect versioning boundaries – we welcome contributions, but all official releases are maintained and approved manually by the maintainer.
+
 6. Open a pull request
 
 ---
@@ -92,14 +96,15 @@ Note : For more examples and details, please check the ```example.py``` file.
 - **[View Source on GitHub](https://github.com/brkcvlk/pptxtoimages)**
 - **[Report Issues](https://github.com/brkcvlk/pptxtoimages/issues)**
 
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
 ## Support This Project
 If you find pptxtoimages helpful or useful, please consider giving it a star on GitHub!
 Your support helps the project grow and motivates further development.
 
 - **[Star this project on GitHub](https://github.com/brkcvlk/pptxtoimages)**
+
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
 
 ## Contact
 

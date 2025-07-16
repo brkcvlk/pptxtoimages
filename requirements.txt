@@ -1,2 +1,4 @@
 pdf2image
 bump2version
+black
+pre-commit

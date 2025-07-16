@@ -7,38 +7,48 @@ try:
 except ImportError:
     convert_from_path = None
 
+
 class PPTXToImageConverter:
     """
     Converts a PPTX file into individual slide images (PNG, JPG, etc.)
-    
+
     This class uses LibreOffice (soffice) to convert the PPTX to PDF,
     then converts each PDF page to an image using pdf2image.
-    
+
     Requirements:
         - LibreOffice installed and accessible via 'soffice' command
         - Poppler utils installed (pdftoppm)
         - pdf2image Python package installed
-    
+
     Args:
         pptx_path (str): Path to the input PPTX file.
         output_dir (str): Directory to save output images. Defaults to 'slides_images'.
         output_format (str): Image format to save (png, jpg, etc.). Defaults to 'png'.
         temp_dir (str): Temporary directory to store intermediate files. Defaults to 'temp'.
-    
+
     Raises:
         RuntimeError: If LibreOffice (soffice) is not found.
         ImportError: If pdf2image is not installed.
         EnvironmentError: If Poppler utils are not installed.
         FileNotFoundError: If the PDF file is not created after conversion.
     """
-    def __init__(self, pptx_path: str, output_dir: str = "slides_images", output_format: str = "png", temp_dir: str = "temp"):
+
+    def __init__(
+        self,
+        pptx_path: str,
+        output_dir: str = "slides_images",
+        output_format: str = "png",
+        temp_dir: str = "temp",
+    ):
         self.pptx_path = pptx_path
         self.output_dir = output_dir
         self.output_format = output_format.lower()
         self.temp_dir = temp_dir
 
         if convert_from_path is None:
-            raise ImportError("pdf2image package is not installed. Please install it with 'pip install pdf2image'.")
+            raise ImportError(
+                "pdf2image package is not installed. Please install it with 'pip install pdf2image'."
+            )
 
         if not self._check_poppler_installed():
             raise EnvironmentError(
@@ -50,6 +60,7 @@ class PPTXToImageConverter:
 
     def _check_poppler_installed(self):
         from shutil import which
+
         return which("pdftoppm") is not None
 
     def _convert_pptx_to_pdf(self):
@@ -59,12 +70,16 @@ class PPTXToImageConverter:
         cmd = [
             "soffice",
             "--headless",
-            "--convert-to", "pdf",
+            "--convert-to",
+            "pdf",
             self.pptx_path,
-            "--outdir", self.temp_dir
+            "--outdir",
+            self.temp_dir,
         ]
         try:
-            subprocess.run(cmd, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            subprocess.run(
+                cmd, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE
+            )
         except FileNotFoundError:
             raise RuntimeError(
                 "LibreOffice (soffice) not found. "
@@ -86,7 +101,9 @@ class PPTXToImageConverter:
         pages = convert_from_path(pdf_path, dpi=200)
         output_files = []
         for i, page in enumerate(pages):
-            output_file = os.path.join(self.output_dir, f"slide_{i+1}.{self.output_format}")
+            output_file = os.path.join(
+                self.output_dir, f"slide_{i+1}.{self.output_format}"
+            )
             page.save(output_file, self.output_format.upper())
             output_files.append(output_file)
         return output_files

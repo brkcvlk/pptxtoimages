@@ -26,9 +26,8 @@ jobs:
           tag_name: ${{ steps.tag.outputs.tag }}
           name: ${{ steps.tag.outputs.tag }}
           body: |
-            ## Changes in ${{ steps.tag.outputs.tag }}
-            
-            **Full Changelog**: https://github.com/${{ github.repository }}/commits/${{ steps.tag.outputs.tag }}
+            ## What's Changed in ${{ steps.tag.outputs.tag }}
           draft: false
           prerelease: false
           generate_release_notes: true
+          make_latest: true

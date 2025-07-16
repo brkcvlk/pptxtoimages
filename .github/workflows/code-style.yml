@@ -22,7 +22,7 @@ jobs:
 
       - name: Run Black and commit if needed
         run: |
-          black .
+          black pptxtoimages/
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           if [ -n "$(git status --porcelain)" ]; then

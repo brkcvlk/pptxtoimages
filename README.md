@@ -95,6 +95,12 @@ Note : For more examples and details, please check the ```example.py``` file.
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
+## Support This Project
+If you find pptxtoimages helpful or useful, please consider giving it a star on GitHub!
+Your support helps the project grow and motivates further development.
+
+- **[Star this project on GitHub](https://github.com/brkcvlk/pptxtoimages)**
+
 ## Contact
 
 Created by Burak Civelek

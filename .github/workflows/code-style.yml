@@ -1,4 +1,4 @@
-name: Code Style Check
+name: Auto Format Code
 
 on:
   push:
@@ -7,17 +7,28 @@ on:
     branches: [ main ]
 
 jobs:
-  black-check:
+  black-format:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
-      - name: Install dependencies
+
+      - name: Install black
+        run: pip install black
+
+      - name: Run Black and commit if needed
         run: |
-          pip install black
-      - name: Run Black
-        run: |
-          black . --check
+          black .
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          if [ -n "$(git status --porcelain)" ]; then
+            git add .
+            git commit -m "chore: auto format code with black"
+            git push
+          else
+            echo "No changes to commit"
+          fi

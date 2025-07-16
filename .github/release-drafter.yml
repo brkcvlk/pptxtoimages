@@ -15,10 +15,13 @@ version-resolver:
   default: 'patch'
 
 template: |
-  ## What's Changed
-  $CATEGORIES
+  ## 🚀 What's Changed
+  $CHANGES
 
-  ## Contributors
+  ## 📦 Full Changelog
+  [$PREVIOUS_TAG...$RESOLVED_TAG]($REPO_COMPARE_URL)
+
+  ## 👥 Contributors
   $CONTRIBUTORS
 
 categories:
@@ -36,7 +39,7 @@ categories:
       - 'docs'
       - 'refactor'
 
-change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
+change-template: '- $TITLE by @$AUTHOR in #$NUMBER'
 no-changes-template: '*No significant changes in this release*'
 no-contributors-template: 'No contributors'
 

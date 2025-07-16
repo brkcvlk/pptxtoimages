@@ -1,7 +1,5 @@
-name-template: 'v$NEXT_PATCH_VERSION'
-tag-template: 'v$NEXT_PATCH_VERSION'
-tag-prefix: ''
-version-template: '$MAJOR.$MINOR.$NEXT_PATCH_VERSION$PRERELEASE'
+name-template: 'v$RESOLVED_VERSION'
+tag-template: 'v$RESOLVED_VERSION'
 version-resolver:
   major:
     labels:
@@ -19,7 +17,7 @@ template: |
   $CHANGES
 
   ## 📦 Full Changelog
-  [$PREVIOUS_TAG...$RESOLVED_TAG]($REPO_COMPARE_URL)
+  **Full Changelog**: https://github.com/$OWNER/$REPOSITORY/compare/$PREVIOUS_TAG...v$RESOLVED_VERSION
 
   ## 👥 Contributors
   $CONTRIBUTORS
@@ -38,11 +36,22 @@ categories:
       - 'chore'
       - 'docs'
       - 'refactor'
+  - title: '📖 Documentation'
+    labels:
+      - 'documentation'
+  - title: '🔧 Other Changes'
+    labels:
+      - '*'
 
 change-template: '- $TITLE by @$AUTHOR in #$NUMBER'
+change-title-escapes: '\<*_&'
 no-changes-template: '*No significant changes in this release*'
 no-contributors-template: 'No contributors'
 
 sort-by: 'merged_at'
 sort-direction: 'descending'
 prerelease: false
+
+include-pre-releases: false
+exclude-labels:
+  - 'skip-changelog'

@@ -1,7 +1,7 @@
 name-template: 'v$NEXT_PATCH_VERSION'
 tag-template: 'v$NEXT_PATCH_VERSION'
 tag-prefix: ''
-version-template: '$MAJOR.$MINOR.$PATCH$PRERELEASE'
+version-template: '$MAJOR.$MINOR.$NEXT_PATCH_VERSION$PRERELEASE'
 version-resolver:
   major:
     labels:
@@ -16,7 +16,7 @@ version-resolver:
 
 template: |
   ## What's Changed
-  $CHANGES
+  $CATEGORIES
 
   ## Contributors
   $CONTRIBUTORS

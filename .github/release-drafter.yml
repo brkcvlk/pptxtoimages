@@ -1,17 +1,35 @@
 name-template: 'v$NEXT_PATCH_VERSION'
 tag-template: 'v$NEXT_PATCH_VERSION'
+tag-prefix: ''
+version-template: '$MAJOR.$MINOR.$PATCH$PRERELEASE'
+version-resolver:
+  major:
+    labels:
+      - 'major'
+  minor:
+    labels:
+      - 'minor'
+  patch:
+    labels:
+      - 'patch'
+  default: 'patch'
+
+template: |
+  ## What's Changed
+  $CHANGES
+
+  ## Contributors
+  $CONTRIBUTORS
 
 categories:
   - title: '🚀 Features'
     labels:
       - 'feat'
       - 'feature'
-
   - title: '🐛 Bug Fixes'
     labels:
       - 'fix'
       - 'bug'
-
   - title: '🧰 Maintenance'
     labels:
       - 'chore'
@@ -20,3 +38,8 @@ categories:
 
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 no-changes-template: '*No significant changes in this release*'
+no-contributors-template: 'No contributors'
+
+sort-by: 'merged_at'
+sort-direction: 'descending'
+prerelease: false
